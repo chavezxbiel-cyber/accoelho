@@ -1,1 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC Coelho - Materiais de Construção e Tintas | Institucional</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #C8102E;
+            --secondary-gray: #4A4A4A;
+            --accent-orange: #E55D25;
+            --footer-bg: #0a0a0a;
+            --dark-section-bg: #000000;
+            --card-border: #333333;
+        }
 
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            background-color: var(--dark-section-bg);
+        }
+
+        h1, h2, h3, h4, h5, .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+
+        .navbar-brand span {
+            color: var(--primary-red);
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--secondary-gray) !important;
+            font-weight: 600;
+            margin: 0 10px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover { color: var(--primary-red) !important; }
+
+        .btn-primary-custom {
+            background-color: var(--primary-red);
+            border-color: var(--primary-red);
+            color: white;
+            font-weight: 700;
+            padding: 10px 25px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #a00d25;
+            color: white;
+        }
+
+        /* Hero Section (Foco em Institucional) */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 140px 0;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.3rem; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; }
+
+        /* Barra de Diferenciais */
+        .benefits-bar {
+            background-color: var(--primary-red);
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-weight: 600;
+        }
+        .benefits-bar i { margin-right: 8px; }
+
+        /* Seção Nossos Segmentos (Substitui os Produtos) */
+        .segments-section {
+            background-color: var(--dark-section-bg);
+            padding: 80px 0;
+        }
+        
+        .segment-title {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .segment-card {
+            background-color: #111;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 40px 30px;
+            text-align: center;
+            height: 100%;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .segment-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-orange);
+        }
+
+        .segment-icon {
+            font-size: 3rem;
+            color: var(--accent-orange);
+            margin-bottom: 20px;
+        }
+
+        .segment-card h4 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .segment-card p {
+            color: #aaa;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Seção WhatsApp */
+        .whatsapp-banner-section { background-color: var(--dark-section-bg); padding: 20px 0 60px; }
+        .whatsapp-banner {
+            background-color: #FDF6E3;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .whatsapp-content { padding: 40px 50px; position: relative; z-index: 1; flex: 1; }
+        .whatsapp-content h2 { color: #0A5B2E; font-weight: 800; font-size: 1.8rem; margin-bottom: 15px; line-height: 1.2; }
+        .whatsapp-content p { color: #444; font-size: 0.95rem; margin-bottom: 10px; max-width: 400px; }
+        .whatsapp-content .schedule { font-size: 0.85rem; color: #666; margin-bottom: 25px; }
+        .btn-whatsapp {
+            background-color: var(--accent-orange); color: white; border: none; padding: 12px 25px;
+            font-weight: 600; font-size: 0.9rem; border-radius: 4px; display: inline-flex;
+            align-items: center; gap: 10px; text-decoration: none; transition: background 0.3s;
+        }
+        .btn-whatsapp:hover { background-color: #c94e1c; color: white; }
+        .whatsapp-image {
+            flex: 1; height: 100%; min-height: 300px;
+            background: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+            position: relative;
+        }
+        .whatsapp-image::after {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to right, #FDF6E3 0%, rgba(253,246,227,0) 30%);
+        }
+
+        /* Seção Depoimentos */
+        .testimonials-section { background-color: var(--dark-section-bg); padding: 60px 0; }
+        .testimonial-card-dark {
+            background-color: transparent;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            color: #fff;
+        }
+        .quote-icon { color: var(--accent-orange); font-size: 1.5rem; font-weight: 900; margin-bottom: 20px; font-family: serif; }
+        .testimonial-card-dark .stars { color: var(--accent-orange); font-size: 0.9rem; margin-bottom: 15px; letter-spacing: 2px; }
+        .testimonial-card-dark p { font-size: 0.9rem; line-height: 1.5; color: #ddd; flex-grow: 1; margin-bottom: 25px; }
+        .testimonial-card-dark hr { border-color: #444; margin: 0 0 15px 0; opacity: 1; }
+        .testimonial-author { font-weight: 700; font-size: 0.9rem; color: #fff; margin-bottom: 0; }
+
+        /* Seção Nossa História */
+        .about-section-dark { background-color: var(--dark-section-bg); padding: 60px 0 80px; color: #fff; }
+        .about-tag { color: #fff; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 15px; display: block; }
+        .about-title { font-size: 2.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 25px; }
+        .about-text { font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 30px; max-width: 90%; }
+        .about-image { border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .about-image img { width: 100%; height: auto; display: block; }
+        .about-list { list-style: none; padding: 0; margin-bottom: 30px; }
+        .about-list li { color: #ccc; font-size: 0.95rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .about-list li i { color: var(--accent-orange); }
+
+        /* Rodapé */
+        footer { background-color: var(--footer-bg); color: #b0b0b0; padding: 60px 0 20px; font-size: 0.85rem; }
+        footer h5 { color: #ffffff; font-size: 1.1rem; margin-bottom: 5px; font-weight: 600; }
+        .footer-line { height: 1px; background-color: #333; margin: 15px 0 25px; width: 100%; }
+        footer p { margin-bottom: 5px; line-height: 1.4; }
+        footer a { color: #b0b0b0; text-decoration: none; transition: color 0.3s; display: inline-block; margin-bottom: 12px; }
+        footer a:hover { color: var(--accent-orange); }
+        .contact-icon-box { display: flex; align-items: flex-start; margin-bottom: 20px; gap: 15px; }
+        .contact-icon { background-color: var(--accent-orange); color: white; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 1rem; flex-shrink: 0; }
+        .contact-text strong { display: block; color: #fff; font-size: 0.95rem; margin-bottom: 2px; }
+        .contact-text span { font-size: 0.8rem; }
+        .newsletter-form .form-control { background-color: #fff; border: none; border-radius: 50px; padding: 12px 20px; margin-bottom: 15px; font-size: 0.9rem; }
+        .newsletter-btn { background-color: var(--accent-orange); color: white; border: none; border-radius: 50px; padding: 10px 30px; font-weight: 700; font-size: 0.9rem; transition: background 0.3s; }
+        .newsletter-btn:hover { background-color: #c94e1c; }
+        .footer-middle { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; margin-top: 40px; margin-bottom: 40px; gap: 20px; }
+        .footer-middle-item h6 { color: #fff; font-size: 0.85rem; margin-bottom: 15px; font-weight: 600; }
+        .payment-icons span { margin-right: 5px; }
+        .social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 35px; height: 35px; border: 1px solid #555; border-radius: 50%; color: #fff; margin-right: 10px; font-size: 1rem; transition: all 0.3s; }
+        .social-icons a:hover { border-color: var(--accent-orange); color: var(--accent-orange); }
+        .footer-bottom { border-top: 1px solid #222; padding-top: 25px; text-align: center; color: #888; font-size: 0.75rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .whatsapp-banner { flex-direction: column; }
+            .whatsapp-image { width: 100%; min-height: 200px; }
+            .whatsapp-image::after { background: linear-gradient(to bottom, rgba(253,246,227,0) 0%, #FDF6E3 100%); }
+            .about-title { font-size: 2rem; }
+            .about-text { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span>AC COELHO</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#segmentos">Segmentos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#historia">Nossa História</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+                <a href="#contato" class="btn btn-primary-custom ms-3">Fale Conosco</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Institucional -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h1>Tradição e Qualidade para sua Casa e Obra</h1>
+            <p>Conheça a AC Coelho, a parceira ideal para sua construção desde 1992.</p>
+            <a href="#historia" class="btn btn-primary-custom btn-lg">Conheça Nossa História</a>
+        </div>
+    </section>
+
+    <!-- Barra de Diferenciais -->
+    <div class="benefits-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"><i class="fas fa-map-marker-alt"></i> Presença no Distrito Federal</div>
+                <div class="col-md-4"><i class="fas fa-award"></i> 30+ Anos de Tradição</div>
+                <div class="col-md-4"><i class="fas fa-users"></i> Atendimento Especializado</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Nossos Segmentos (Informativo) -->
+    <section id="segmentos" class="segments-section">
+        <div class="container">
+            <h2 class="segment-title">O que você encontra na AC Coelho</h2>
+            <div class="row g-4">
+                
+                <div class="col-md-4">
+                    <div class="segment-card">
+                        <div class="segment-icon"><i class="fas fa-trowel"></i></div>
+                        <h4>Materiais de Construção</h4>
+                        <p>Do alicerce ao acabamento. Oferecemos cimento, areia, tijolos, ferragens, ferramentas e tudo o que você precisa para a estrutura da sua obra.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="segment-card">
+                        <div class="segment-icon"><i class="fas fa-paint-roller"></i></div>
+                        <h4>Tintas e Acabamentos</h4>
+                        <p>Lojas especializadas com as melhores marcas de tintas, texturas, vernizes e materiais para pintura, garantindo a cor e a proteção do seu projeto.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="segment-card">
+                        <div class="segment-icon"><i class="fas fa-bath"></i></div>
+                        <h4>Acabamentos e Louças</h4>
+                        <p>Variedade em metais sanitários, louças, cubas, revestimentos e acessórios para banheiros e cozinhas com design e funcionalidade.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção WhatsApp (Atendimento) -->
+    <section class="whatsapp-banner-section">
+        <div class="container">
+            <div class="whatsapp-banner">
+                <div class="whatsapp-content">
+                    <h2>PRECISA DE AJUDA<br>COM SEU PROJETO?</h2>
+                    <p>Fale com um consultor online pelo WhatsApp e receba orientação especializada para escolher o produto ideal.</p>
+                    <p class="schedule">Segunda a sexta-feira, das 7h30 às 18h, e aos sábados, das 7h30 às 16h.</p>
+                    <a href="#" class="btn-whatsapp">
+                        Falar pelo WhatsApp <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="whatsapp-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Depoimentos -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card-dark">
+                        <div class="quote-icon">”</div>
+                        <div class="stars">★ ★ ★ ★ ★</div>
+                        <p>"Sempre encontro tudo o que preciso na AC Coelho. O atendimento é excelente, a equipe é muito bem preparada e os preços são competitivos. Recomendo para todos que estão fazendo obra!"</p>
+                        <hr>
+                        <p class="testimonial-author">João Mendes</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card-dark">
+                        <div class="quote-icon">”</div>
+                        <div class="stars">★ ★ ★ ★ ★</div>
+                        <p>"Comprei todos os materiais para a reforma completa do meu apartamento aqui. Fui muito bem atendida, a variedade de produtos é impressionante e a entrega foi certinha no prazo combinado."</p>
+                        <hr>
+                        <p class="testimonial-author">Fernanda Lima</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card-dark">
+                        <div class="quote-icon">”</div>
+                        <div class="stars">★ ★ ★ ★ ★</div>
+                        <p>"A equipe técnica me ajudou a escolher as melhores tintas e revestimentos para meu projeto. O resultado foi incrível. A AC Coelho é referência no Distrito Federal com certeza!"</p>
+                        <hr>
+                        <p class="testimonial-author">Carlos Andrade</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Nossa História (Institucional) -->
+    <section id="historia" class="about-section-dark">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <span class="about-tag">NOSSA HISTÓRIA</span>
+                    <h2 class="about-title">AC Coelho. Tradição e qualidade desde 1992</h2>
+                    <p class="about-text">A AC Coelho é uma das mais tradicionais lojas de materiais de construção do Distrito Federal. Com lojas completas e especializadas em tintas, oferecemos tudo o que você precisa para sua casa e obra, do básico ao acabamento fino.</p>
+                    
+                    <ul class="about-list">
+                        <li><i class="fas fa-check-circle"></i> Razão Social: AC Coelho Materiais para Construção LTDA</li>
+                        <li><i class="fas fa-check-circle"></i> CNPJ: 37.083.474/0010-45</li>
+                        <li><i class="fas fa-check-circle"></i> Sede: SIA Trecho 3, Lotes 1010/1060/1070 - Brasília/DF</li>
+                    </ul>
+
+                    <a href="#contato" class="btn btn-primary-custom">Fale com a nossa equipe</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fachada AC Coelho">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer id="contato">
+        <div class="container">
+            <div class="row">
+                <!-- Coluna 1: Atendimento -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Atendimento</h5>
+                    <div class="footer-line"></div>
+                    <div class="contact-icon-box">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="contact-text">
+                            <strong>(61) 3403-3434</strong>
+                            <span>Horário de atendimento do Televendas: segunda a sexta, das 8h30 às 18h; sábado, das 7h30 às 16h.</span>
+                        </div>
+                    </div>
+                    <div class="contact-icon-box">
+                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div class="contact-text">
+                            <strong>(61) 99988-3622</strong>
+                            <span>WhatsApp</span>
+                        </div>
+                    </div>
+                    <div class="contact-icon-box">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-text">
+                            <strong>contato@accoelho.com.br</strong>
+                            <span>Resposta em até 24h úteis.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna 2: Ajuda e Suporte -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Institucional</h5>
+                    <div class="footer-line"></div>
+                    <ul class="list-unstyled">
+                        <li><a href="#historia">Quem Somos</a></li>
+                        <li><a href="#">Nossas Lojas</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Política de privacidade</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 3: Endereços -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Nossa Sede</h5>
+                    <div class="footer-line"></div>
+                    <p class="mb-2"><strong>SIA Trecho 3, Lotes 1010/1060/1070</strong></p>
+                    <p class="mb-2">Brasília - DF</p>
+                    <p class="mb-2">CEP: 71.200-030</p>
+                    <a href="#" class="mt-2 d-inline-block"><i class="fas fa-map-marker-alt me-2"></i> Ver no mapa</a>
+                </div>
+
+                <!-- Coluna 4: Newsletter -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Fique por dentro</h5>
+                    <div class="footer-line"></div>
+                    <p class="mb-3">Assine nossa newsletter para receber novidades e dicas de construção.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="form-control" placeholder="Seu Email" required>
+                        <button type="submit" class="newsletter-btn">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Linha Inferior: Selos e Redes Sociais -->
+            <div class="footer-middle">
+                <div class="footer-middle-item">
+                    <h6>Siga a AC Coelho</h6>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-middle-item">
+                    <h6>Site 100% Seguro</h6>
+                    <div class="d-flex align-items-center gap-3 text-white">
+                        <span style="font-weight:bold; font-size: 1.2rem;"><i class="fas fa-shield-alt"></i> PCI</span>
+                        <span style="font-weight:bold;"><i class="fas fa-lock"></i> Let's Encrypt</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p class="mb-0">© 2026 | AC Coelho Materiais para Construção LTDA - CNPJ nº 37.083.474/0010-45 - SIA Trecho 3 Lote 1010, Brasília - DF, CEP: 71.200-030. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Política de Privacidade -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyModalLabel">Política de Privacidade</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>1. Coleta de Informações</h6>
+                    <p>A AC Coelho Materiais para Construção LTDA (CNPJ 37.083.474/0010-45) coleta informações pessoais fornecidas voluntariamente por você através dos nossos canais de atendimento.</p>
+                    <h6>2. Uso das Informações</h6>
+                    <p>Utilizamos seus dados exclusivamente para responder a solicitações, fornecer orçamentos e manter você informado sobre nossas novidades (caso autorizado).</p>
+                    <h6>3. Seus Direitos (LGPD)</h6>
+                    <p>Você pode solicitar a confirmação, acesso, correção ou exclusão dos seus dados a qualquer momento através do e-mail: contato@accoelho.com.br.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
